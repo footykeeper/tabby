@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!-- footykeeper Copyright (c) 2017 -->
+<!-- Made to be downloaded onto your computer and used while offline -->
+<!-- View license: https://footykeeper.github.io/tabby/LICENSE.txt -->
 <html>
 <head>
   <title>HTML Editor || footykeeper</title>
@@ -27,6 +30,8 @@
   </style>
 </head>
 <body>
+  <textarea rows="1" style="width: 100%" id="onloads" placeholder="Onload Functions (1 maximum)"></textarea>
+  <textarea rows="1" style="width: 100%" id="links">Links (stylesheets, favicons, etc.)</textarea>
   <textarea class="text-input" id="head">Head Code</textarea>
   <textarea class="text-input" id="body">Body Code</textarea>
   <textarea class="text-input" id="css">CSS</textarea>
@@ -41,13 +46,17 @@
     var head = null;
     var css = null;
     var javascript = null;
+    var onloads = null;
+    var links = null;
 
     function runCode () {
+      onloads = document.getElementById("onloads").value;
+      links = document.getElementById("links").value;
       body = document.getElementById("body").value;
       head = document.getElementById("head").value;
       css = document.getElementById("css").value;
       javascript = document.getElementById("javascript").value;
-      docHTML = String("<!DOCTYPE HTML><html><head>" + head + "<style type='text/css'>" + css + "</style></head><body>" + body + "<scr" + "ipt>" + javascript + "</scr" + "ipt></body></html>");
+      docHTML = String("<!DOCTYPE HTML><html><head>" + head + "<style type='text/css'>" + css + "</style>" + links + "</head><body onload='" + onloads + "'>" + body + "<scr" + "ipt>" + javascript + "</scr" + "ipt></body></html>");
       document.getElementById('displayDoc').srcdoc = docHTML;
     }
   </script>
