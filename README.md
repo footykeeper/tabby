@@ -1,4 +1,4 @@
-# tabby
+# tabby: Made for HTML developers, by an HTML developer
 footykeeper's code editor. Made for developing offline or online, it can be downloaded as a .zip file and used without an internet connection, assuming you downloaded it while online.
 
 If you have a change to suggest, feel free to fork the repository and create a pull request. At the moment, we would be especially welcome to:
