@@ -9,8 +9,7 @@ function runCode () {
   string += '<style>' + css + '</style>';
   string += jsBreak[0] + '<scr' + 'ipt>' + js + '</scr' + 'ipt>' + '</body>';
   string += jsBreak[1];
-  
-  return string;
+  document.getElementById('displayDoc').srcdoc = string;
 }
 
 $(document).ready(function () {
@@ -18,5 +17,5 @@ $(document).ready(function () {
 });
 
 $('.text-input').keyup(function () {
-  alert(runCode());
+  runCode();
 });
