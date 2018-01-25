@@ -15,17 +15,6 @@
         height: 300px;
         border: none;
       }
-
-      .spacer {
-        height: 100px;
-      }
-
-      table {
-        text-align: center;
-        margin: auto;
-        width: 100%;
-        height: 500px;
-      }
     </style>
   </head>
   <body>
@@ -34,27 +23,7 @@
     <textarea class="text-input" id="css" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
     <iframe id="displayDoc" class="display"></iframe>
     <script>
-function runCode () {
-  var html = $('#html').val();
-  var js = $('#js').val();
-  var css = $('#css').val();
-  var string = '';
-  var cssBreak = html.split('<head>');
-  var jsBreak = cssBreak[1].split('</body>');
-  string += cssBreak[0] + '<head>';
-  string += '<style>' + css + '</style>';
-  string += jsBreak[0] + '<scr' + 'ipt>' + js + '</scr' + 'ipt>' + '</body>';
-  string += jsBreak[1];
-  document.getElementById('displayDoc').srcdoc = string;
-}
-
-$(document).ready(function () {
-  $('#html').text('<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset="UTF-8"/>\n    <title>Sample Code</title>\n  </head>\n  <body>\n    <p>This is my page!</p>\n  </body>\n</html>');
-});
-
-$('.text-input').keyup(function () {
-  runCode();
-});
+function runCode(){var t=$("#html").val(),e=$("#js").val(),n=$("#css").val(),d="",l=t.split("<head>"),a=l[1].split("</body>");d+=l[0]+"<head>",d+="<style>"+n+"</style>",d+=a[0]+"<script>"+e+"<\/script></body>",d+=a[1],document.getElementById("displayDoc").srcdoc=d}$(document).ready(function(){$("#html").text('<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset="UTF-8"/>\n    <title>Sample Code</title>\n  </head>\n  <body>\n    <p>This is my page!</p>\n  </body>\n</html>')}),$(".text-input").keyup(function(){runCode()});
     </script>
   </body>
 </html>
