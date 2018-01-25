@@ -41,7 +41,11 @@ function runCode () {
   var string = '';
   var cssBreak = html.split('<head>');
   var jsBreak = cssBreak[1].split('</body>');
-  string += '';
+  string += cssBreak[0];
+  string += '<style>' + css + '</style>';
+  string += jsBreak[0] + '<scr' + 'ipt>' + js + '</scr' + 'ipt>';
+  
+  return string;
 }
 
 $(document).ready(function () {
