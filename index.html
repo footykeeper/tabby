@@ -41,9 +41,10 @@ function runCode () {
   var string = '';
   var cssBreak = html.split('<head>');
   var jsBreak = cssBreak[1].split('</body>');
-  string += cssBreak[0];
+  string += cssBreak[0] + '<head>';
   string += '<style>' + css + '</style>';
-  string += jsBreak[0] + '<scr' + 'ipt>' + js + '</scr' + 'ipt>';
+  string += jsBreak[0] + '<scr' + 'ipt>' + js + '</scr' + 'ipt>' + '</body>';
+  string += jsBreak[1];
   
   return string;
 }
