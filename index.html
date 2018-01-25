@@ -38,8 +38,10 @@ function runCode () {
   var html = $('#html').val();
   var js = $('#js').val();
   var css = $('#css').val();
-  
-  
+  var string = '';
+  var cssBreak = html.split('<head>');
+  var jsBreak = cssBreak[1].split('</body>');
+  string += '';
 }
 
 $(document).ready(function () {
@@ -47,7 +49,7 @@ $(document).ready(function () {
 });
 
 $('.text-input').keyup(function () {
-  
+  alert(runCode());
 });
     </script>
   </body>
