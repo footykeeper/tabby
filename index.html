@@ -1,64 +1,54 @@
 <!DOCTYPE html>
-<!-- footykeeper Copyright (c) 2017 -->
-<!-- Made to be downloaded onto your computer and used while offline -->
-<!-- View license: https://footykeeper.github.io/tabby/LICENSE.txt -->
 <html>
-<head>
-  <title>HTML Editor || footykeeper</title>
-  <style>
-    .text-input {
-      width: 100%;
-      height: 300px;
-      float: left;
-    }
+  <head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title>HTML Editor || footykeeper</title>
+    <style>
+      .text-input {
+        width: 50%;
+        height: 300px;
+        float: left;
+      }
 
-    .display {
-      width: 100%;
-      height: 550px;
-    }
+      .display {
+        width: 50%;
+        height: 300px;
+        border: none;
+      }
 
-    .spacer {
-      height: 100px;
-    }
+      .spacer {
+        height: 100px;
+      }
 
-    table {
-      text-align: center;
-      margin: auto;
-      width: 100%;
-      height: 500px;
-    }
-  </style>
-</head>
-<body>
-  <textarea rows="1" style="width: 100%" id="onloads" placeholder="Onload Functions (1 maximum)"></textarea>
-  <textarea rows="1" style="width: 100%" id="links" placeholder="Links (favicons, stylesheets, etc.)"></textarea>
-  <textarea class="text-input" id="head" placeholder="Head Code"></textarea>
-  <textarea class="text-input" id="body" placeholder="Body Code"></textarea>
-  <textarea class="text-input" id="css" placeholder="CSS"></textarea>
-  <textarea class="text-input" id="javascript" placeholder="JavaScript"></textarea>
-  <br/>
-  <div style="margin: auto; text-align: center"><button onclick="runCode()">Run Code</button></div>
-  <div class="spacer"></div>
-  <iframe id="displayDoc" class="display"></iframe>
-  <script>
-    var docHTML = null;
-    var body = null;
-    var head = null;
-    var css = null;
-    var javascript = null;
-    var onloads = null;
-    var links = null;
+      table {
+        text-align: center;
+        margin: auto;
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea class="text-input" id="html" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+    <textarea class="text-input" id="js" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+    <textarea class="text-input" id="css" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+    <iframe id="displayDoc" class="display"></iframe>
+    <script>
+function runCode () {
+  var html = $('#html').val();
+  var js = $('#js').val();
+  var css = $('#css').val();
+  
+  
+}
 
-    function runCode () {
-      onloads = document.getElementById("onloads").value;
-      links = document.getElementById("links").value;
-      body = document.getElementById("body").value;
-      head = document.getElementById("head").value;
-      css = document.getElementById("css").value;
-      javascript = document.getElementById("javascript").value;
-      docHTML = String("<!DOCTYPE HTML><html><head>" + head + "<style type='text/css'>" + css + "</style>" + links + "</head><body onload='" + onloads + "'>" + body + "<scr" + "ipt>" + javascript + "</scr" + "ipt></body></html>");
-      document.getElementById('displayDoc').srcdoc = docHTML;
-    }
-  </script>
-</body>
+$(document).ready(function () {
+  $('#html').text('<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset="UTF-8"/>\n    <title>Sample Code</title>\n  </head>');
+});
+
+$('.text-input').keyup(function () {
+  
+});
+    </script>
+  </body>
 </html>
